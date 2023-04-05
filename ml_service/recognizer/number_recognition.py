@@ -3,6 +3,7 @@ import numpy as np
 
 # Загрузка изображения
 img = cv2.imread('image.jpg')
+model = None
 
 # Преобразование в градации серого
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
