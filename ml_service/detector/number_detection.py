@@ -1,3 +1,6 @@
+"""Модуль определяет квадрат видео, где находится номер игрока (на футболке).
+"""
+
 import cv2
 import mediapipe as mp
 import numpy as np
