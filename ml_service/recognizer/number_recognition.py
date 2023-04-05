@@ -1,9 +1,13 @@
 import cv2
 import numpy as np
+from number_recognition import NumberRecognizer
 
-# Загрузка изображения
+
+# Загрузка изображения по кадрам
 img = cv2.imread('image.jpg')
-model = None
+model = NumberRecognizer()
+model.init() # create a model
+model.load() # load the model
 
 # Преобразование в градации серого
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -21,17 +25,17 @@ for cnt in contours:
         digit = gray[y:y+h, x:x+w]
 
         # Изменение размера образца до размера, соответствующего обученной модели
-        resized_digit = cv2.resize(digit, (18, 18))
+        resized_digit = cv2.resize(digit, (28, 28))
 
         # Преобразование образца в формат, необходимый для обученной модели
         sample = np.array(resized_digit, dtype=np.float32)
-        sample = sample.reshape((1, 1, 18, 18))
+        sample = sample.reshape((1, 1, 28, 28))
 
-        # Распознавание образца с использованием обученной модели
-        result = model.predict(sample)
+        # Распознавание образца с использованием предобученной модели
+        num = model.recognize(sample) # распознавание числа
 
         # Вывод распознанной цифры на изображение
-        cv2.putText(img, str(np.argmax(result)), (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+        cv2.putText(img, str(np.argmax(num)), (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
 # Отображение результата
 cv2.imshow('Result', img)
