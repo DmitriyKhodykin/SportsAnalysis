@@ -1,3 +1,7 @@
+"""
+Модуль определяет номер игрока на футболке.
+"""
+
 import cv2
 import numpy as np
 from number_recognition import NumberRecognizer
