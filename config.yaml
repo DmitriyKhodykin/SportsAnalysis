@@ -1,0 +1,8 @@
+video:
+  path: ../datasets/football/stream.mp4
+
+photos:
+  ball_path: pass
+  player_path: pass
+  active_player_path: pass
+  kick_path: pass
