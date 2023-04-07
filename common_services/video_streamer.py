@@ -15,6 +15,8 @@ read_frame(self) - метод, который читает один кадр в�
 
 import cv2
 
+from get_config import open_config
+
 
 class VideoStream:
     def __init__(self, video_path):
@@ -32,7 +34,9 @@ class VideoStream:
 
 
 if __name__ == "__main__":
-    video_stream = VideoStream("test.mp4")
+    config = open_config()
+    video_path = config["video"]["path"]
+    video_stream = VideoStream(video_path)
 
     while True:
         frame = video_stream.read_frame()

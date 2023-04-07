@@ -1,5 +1,5 @@
 video:
-  path: ../datasets/football/stream.mp4
+  path: ../../datasets/football/stream.mp4
 
 photos:
   ball_path: pass
