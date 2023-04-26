@@ -6,10 +6,10 @@ import pandas as pd
 app = dash.Dash(__name__)
 
 data = {
-    "Team": ["Team A", "Team B", "Team C", "Team D"],
-    "Goals": [3, 1, 0, 2],
-    "Shots on Goal": [5, 3, 2, 4],
-    "Possession": ["45%", "35%", "20%", "40%"],
+    "Команда": ["ЦСКА", "Зенит"],
+    "Голы": [3, 1],
+    "Голевые передачи": [5, 3],
+    "Владение": ["65%", "35%"],
 }
 
 df = pd.DataFrame(data)
