@@ -30,4 +30,4 @@ table = html.Table(table_header + table_body)
 app.layout = html.Div(children=[table])
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=True)  # port='8050'
